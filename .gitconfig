@@ -15,3 +15,5 @@
 	tool = opendiff
 [alias]
 	ff = pull --ff
+[rebase]
+	autosquash = true
