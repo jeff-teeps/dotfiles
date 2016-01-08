@@ -1,6 +1,6 @@
 [user]
 	name = Jeffrey Klarfeld
-	email = jklarfeld@me.com
+	email = jeff@teeps.org
 [push]
 	default = upstream
 [difftool "sourcetree"]
@@ -15,3 +15,5 @@
 	tool = opendiff
 [alias]
 	ff = pull --ff
+[rebase]
+	autosquash = true

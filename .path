@@ -1,3 +1,7 @@
 # brew binaries first
 
 export PATH="/usr/local/bin:$PATH"
+
+# GoLand
+
+export PATH="/usr/local/opt/go/libexec/bin:$PATH"

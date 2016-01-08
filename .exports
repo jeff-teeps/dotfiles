@@ -1,1 +1,3 @@
-export EDITOR=nano
+export EDITOR=emacs
+
+export GOPATH=/Users/jklarfeld/Developer/golang

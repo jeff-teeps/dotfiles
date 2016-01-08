@@ -6,7 +6,7 @@ function color_my_prompt {
     local __git_branch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`'
     local __prompt_tail="\[\033[35m\]$"
     local __last_color="\[\033[00m\]"
-    export PS1="$__cur_time $__cur_location $__git_branch_color$__git_branch\n$__prompt_tail $__last_color"
+    export PS1="$__cur_time $__cur_location $__git_branch_color$__git_branch\$(parse_svn_branch)\n$__prompt_tail $__last_color"
 }
 color_my_prompt
 
@@ -24,11 +24,16 @@ function hideHiddenFiles {
 	killall Finder
 }
 
+parse_svn_branch() {
+  parse_svn_url | sed -e 's#^'"$(parse_svn_repository_root)"'##g' | awk '{print " (svn::"$1")" }'
+}
+parse_svn_url() {
+  svn info 2>/dev/null | sed -ne 's#^URL: ##p'
+}
+parse_svn_repository_root() {
+  svn info 2>/dev/null | sed -ne 's#^Repository Root: ##p'
+}
 # Open Markdown in Mou from command line!
 function mou {
     open ~/Applications/Mou.app $1
-}
-
-function code () {
-    VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $*
 }

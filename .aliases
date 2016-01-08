@@ -4,14 +4,7 @@ alias devchrome="open -a Google\ Chrome --args --disable-web-security --allow-fi
 # Developer Folder
 alias dev="cd ~/Developer"
 
-# Teeps Folder
-alias teeps="cd ~/Developer/Teeps"
-
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-
-# SSH Tunnel to SickBeard
-
-alias sickSSH="ssh -N -L 8081:10.0.1.34:8081 jklarfeld@meowschwitz.dyndns.org"
 
 alias brewUp="brew update && brew upgrade --all"
