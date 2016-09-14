@@ -40,13 +40,13 @@ function mou {
 }
 
 function start_ramdisk {
-  sudo .xcode_ramdisk start
+  sudo ~/.xcode_ramdisk start
 }
 
 function stop_ramdisk {
-  sudo .xcode_ramdisk stop
+  sudo ~/.xcode_ramdisk stop
 }
 
 function restart_ramdisk {
-  sudo .xcode_ramdisk restart
+  sudo ~/.xcode_ramdisk restart
 }
