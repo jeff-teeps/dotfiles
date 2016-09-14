@@ -1,12 +1,12 @@
 
 function color_my_prompt {
-    local __cur_time="\$(date +%k:%M:%S):"
-    local __cur_location="\[\033[01;33m\]\w"
-    local __git_branch_color="\[\033[31m\]"
-    local __git_branch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`'
-    local __prompt_tail="\[\033[35m\]$"
-    local __last_color="\[\033[00m\]"
-    export PS1="$__cur_time $__cur_location $__git_branch_color$__git_branch\$(parse_svn_branch)\n$__prompt_tail $__last_color"
+  local __cur_time="\$(date +%k:%M:%S):"
+  local __cur_location="\[\033[01;33m\]\w"
+  local __git_branch_color="\[\033[31m\]"
+  local __git_branch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`'
+  local __prompt_tail="\[\033[35m\]$"
+  local __last_color="\[\033[00m\]"
+  export PS1="$__cur_time $__cur_location $__git_branch_color$__git_branch\$(parse_svn_branch)\n$__prompt_tail $__last_color"
 }
 color_my_prompt
 
@@ -33,7 +33,20 @@ parse_svn_url() {
 parse_svn_repository_root() {
   svn info 2>/dev/null | sed -ne 's#^Repository Root: ##p'
 }
+
 # Open Markdown in Mou from command line!
 function mou {
-    open ~/Applications/Mou.app $1
+  open ~/Applications/Mou.app $1
+}
+
+function start_ramdisk {
+  sudo .xcode_ramdisk start
+}
+
+function stop_ramdisk {
+  sudo .xcode_ramdisk stop
+}
+
+function restart_ramdisk {
+  sudo .xcode_ramdisk restart
 }
