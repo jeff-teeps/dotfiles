@@ -15,5 +15,6 @@
 	tool = opendiff
 [alias]
 	ff = pull --ff
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 [rebase]
 	autosquash = true
